@@ -1,0 +1,149 @@
+Package: dpkg
+Version: 1.22.6
+Architecture: iphoneos-arm64
+Essential: yes
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 6292
+Pre-Depends: tar (>= 1.23), libintl8 (>= 0.20)
+Depends: libiosexec1 (>= 1.3.1), sh, coreutils, diffutils, tar, liblzma5 (>= 5.2.5), libintl8, libz-ng2, libzstd1, libmd0
+Filename: ./dpkg_1.22.6_iphoneos-arm64.deb
+Size: 1238342
+MD5sum: 86d629c01d73b5a7f429005028f54a30
+SHA1: 8e5689fdd225f5e30b9b4c39fa621477684743ff
+SHA256: 525ec7efe4585ee21c7a056356f35b1b8c885cc1b7175a727514eb11d1ba16c8
+Section: Packaging
+Priority: required
+Homepage: http://wiki.debian.org/Teams/Dpkg
+Description: package maintainance tools from Debian
+
+Package: dpkg-dev
+Version: 1.22.6
+Architecture: iphoneos-arm64
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1816
+Depends: dpkg (= 1.22.6), libdpkg-perl (= 1.22.6)
+Filename: ./dpkg-dev_1.22.6_iphoneos-arm64.deb
+Size: 1072914
+MD5sum: cf92f3efe978f517d57dd3584f427f58
+SHA1: 9666610fc47314d7b71cbe12f7d878e3c9720b8c
+SHA256: 0ca2687cb557452f2dd112d4079a0c29dea76fb500191703477c06a8ba8d8b32
+Section: Packaging
+Priority: optional
+Homepage: http://wiki.debian.org/Teams/Dpkg
+Description: Debian package development tools
+ This package provides the development tools (including dpkg-source)
+ required to unpack, build and upload Debian source packages.
+
+Package: dpkg-repack
+Version: 1.52
+Architecture: iphoneos-arm64
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 40
+Depends: perl, libdpkg-perl
+Suggests: fakeroot
+Filename: ./dpkg-repack_1.52_iphoneos-arm64.deb
+Size: 15776
+MD5sum: 2eda8c34f1f46bc32ec50831b8a551a6
+SHA1: 1ad2023d68eea33716e7648c4e5a469b8049860a
+SHA256: e710cdc499836846bd8707a239f8a5d0aee82c3882af05f99f3a2e9f0af95887
+Section: Utilities
+Priority: standard
+Description: Debian package archiving tool
+ dpkg-repack creates a .deb file out of a package that has already been
+ installed. If any changes have been made to the package while it was
+ unpacked (i.e. files in /etc were modified), the new package will inherit
+ the changes.
+ .
+ This utility can make it easy to copy packages from one computer to another,
+ or to recreate packages that are installed on your system, but no longer
+ available elsewhere, or to store the current state of a package before you
+ upgrade it.
+
+Package: libdpkg-dev
+Version: 1.22.6
+Architecture: iphoneos-arm64
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 976
+Depends: liblzma-dev, libzstd-dev
+Filename: ./libdpkg-dev_1.22.6_iphoneos-arm64.deb
+Size: 272298
+MD5sum: 16bb24fe67e8f2aee10e180032c43638
+SHA1: 4f978b9c0a29301013ff620c27f71fb26a16024a
+SHA256: 0deac729d0aa9a1616e9623289238fb7e596d69e881b0b8b0a7af799b4920ed3
+Section: Packaging
+Priority: optional
+Homepage: http://wiki.debian.org/Teams/Dpkg
+Description: Debian package management static library
+ This package provides the header files and static library necessary to
+ develop software using libdpkg, the same library used internally by dpkg.
+ .
+ Note though, that the API is to be considered volatile, and might change
+ at any time, use at your own risk.
+
+Package: libdpkg-perl
+Version: 1.22.6
+Architecture: iphoneos-arm64
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 2088
+Depends: dpkg (= 1.22.6), perl
+Conflicts: dpkg-perl (<<1:0), dpkg-dev (<< 1.22.6)
+Replaces: dpkg-perl
+Provides: dpkg-perl (= 1.22.6)
+Filename: ./libdpkg-perl_1.22.6_iphoneos-arm64.deb
+Size: 444198
+MD5sum: 9bfb6860df5204a5fbbebc7ca3a21259
+SHA1: c0d1b0cd8e2d48e62ec9e412f509a41cdf0a263f
+SHA256: 49045dc41aa3aca20f8223b03772d6f6ce88b9dcbe62f0b07b92624d0e35592f
+Section: Packaging
+Priority: optional
+Homepage: http://wiki.debian.org/Teams/Dpkg
+Description: Dpkg perl modules
+ This package provides the perl modules used by the scripts
+ in dpkg-dev. They cover a wide range of functionality. Among them
+ there are the following public modules:
+ .
+  - Dpkg: core variables
+  - Dpkg::Arch: architecture handling functions
+  - Dpkg::Build::Info: build information functions
+  - Dpkg::BuildFlags: set, modify and query compilation build flags
+  - Dpkg::BuildOptions: parse and manipulate DEB_BUILD_OPTIONS
+  - Dpkg::BuildProfiles: parse and manipulate build profiles
+  - Dpkg::Changelog: parse changelogs
+  - Dpkg::Changelog::Entry: represents a changelog entry
+  - Dpkg::Changelog::Parse: generic changelog parser for dpkg-parsechangelog
+  - Dpkg::Checksums: generate and parse checksums
+  - Dpkg::Compression: simple database of available compression methods
+  - Dpkg::Compression::FileHandle: transparently (de)compress files
+  - Dpkg::Compression::Process: wrapper around compression tools
+  - Dpkg::Conf: parse dpkg configuration files
+  - Dpkg::Control: parse and manipulate Debian control information
+    (.dsc, .changes, Packages/Sources entries, etc.)
+  - Dpkg::Control::Changelog: represent fields output by dpkg-parsechangelog
+  - Dpkg::Control::Fields: manage (list of known) control fields
+  - Dpkg::Control::Hash: parse and manipulate a block of RFC822-like fields
+  - Dpkg::Control::Info: parse files like debian/control
+  - Dpkg::Control::Tests: parse files like debian/tests/control
+  - Dpkg::Control::Tests::Entry: represents a debian/tests/control stanza
+  - Dpkg::Deps: parse and manipulate dependencies
+  - Dpkg::Deps::Simple: represents a single dependency statement
+  - Dpkg::Deps::Multiple: base module to represent multiple dependencies
+  - Dpkg::Deps::Union: list of unrelated dependencies
+  - Dpkg::Deps::AND: list of AND dependencies
+  - Dpkg::Deps::OR: list of OR dependencies
+  - Dpkg::Deps::KnownFacts: list of installed and virtual packages
+  - Dpkg::Exit: push, pop and run exit handlers
+  - Dpkg::Gettext: wrapper around Locale::gettext
+  - Dpkg::IPC: spawn sub-processes and feed/retrieve data
+  - Dpkg::Index: collections of Dpkg::Control (Packages/Sources files for
+    example)
+  - Dpkg::Interface::Storable: base object serializer
+  - Dpkg::Path: common path handling functions
+  - Dpkg::Source::Format: manipulate debian/source/format files
+  - Dpkg::Source::Package: extract Debian source packages
+  - Dpkg::Substvars: substitute variables in strings
+  - Dpkg::Vendor: identify current distribution vendor
+  - Dpkg::Version: parse and manipulate Debian package versions
+ .
+ All the packages listed in Suggests or Recommends are used by some of the
+ modules.
+
